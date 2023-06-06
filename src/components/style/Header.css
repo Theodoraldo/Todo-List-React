@@ -1,0 +1,14 @@
+.content-center {
+  text-align: center;
+}
+
+.head-head {
+  color: rgb(173, 173, 173);
+  font-size: 100px;
+  font-weight: 500;
+}
+
+.head-sub {
+  font-size: 18px;
+  color: rgb(173, 173, 173);
+}
