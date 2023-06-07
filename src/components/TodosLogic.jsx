@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
 import { v4 as uuidv4 } from 'uuid';
+import './style/TodosLogic.css';
 
 function TodosLogic() {
   const [todos, setTodos] = useState([
@@ -40,10 +41,26 @@ function TodosLogic() {
     setTodos([...todos, newTodo]);
   };
 
+  const setUpdate = (updatedTitle, id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.title = updatedTitle;
+        }
+        return todo;
+      })
+    );
+  };
+
   return (
-    <div>
+    <div className="logic">
       <InputTodo addTodoItem={addTodoItem} />
-      <TodosList todosProps={todos} setTodos={setTodos} delTodo={delTodo} />
+      <TodosList
+        todosProps={todos}
+        setTodos={setTodos}
+        delTodo={delTodo}
+        setUpdate={setUpdate}
+      />
     </div>
   );
 }
