@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import './style/Navbar.css';
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
-  const ref = useRef();
 
   useEffect(() => {
     const handler = (event) => {
@@ -14,22 +15,9 @@ const Navbar = () => {
   }, [dropdown]);
 
   return (
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li ref={ref}>
-          <button onClick={() => setDropdown(!dropdown)}>
-            Services <span>&#8595;</span>
-          </button>
-          {dropdown && (
-            <ul>
-              <li>Design</li>
-              <li>Development</li>
-            </ul>
-          )}
-        </li>
-      </ul>
+    <nav className="Nav">
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/about">About</NavLink>
     </nav>
   );
 };
