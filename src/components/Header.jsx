@@ -5,9 +5,7 @@ function Header() {
   return (
     <div className="content-center">
       <pattern className="head-head">todos</pattern>
-      <p className="head-sub">
-        Items will persist in the browser local storage
-      </p>
+      <p className="head-sub">Items to be completed are listed below</p>
     </div>
   );
 }

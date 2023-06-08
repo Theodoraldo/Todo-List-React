@@ -1,0 +1,7 @@
+.about-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  color: white;
+  width: 60%;
+}
